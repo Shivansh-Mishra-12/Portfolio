@@ -1,0 +1,41 @@
+@import "tailwindcss";
+/* @keyframes lineReveal {
+  to {
+    transform: scaleX(1);
+  }
+} */
+ @keyframes lineReveal {
+  to {
+    transform: scaleX(1);
+  }
+} 
+@theme {
+  /* Base colors */
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-card: #141414;
+
+  /* Borders */
+  --color-border: #222222;
+
+  /* Accent colors */
+  --color-primary: #c8f135;
+  --color-secondary: #ff4d6d;
+
+  /* Text */
+  --color-text: #f0f0f0;
+  --color-muted: #666666;
+
+  /* Fonts */
+  --font-sans: "Syne", sans-serif;
+  --font-mono: "DM Mono", monospace;
+}
+
+/* Optional global styles */
+@layer base {
+  body {
+    /* @apply bg-[var(--color-bg)] text-[var(--color-text)] font-mono; */
+    @apply bg-bg text-text font-mono
+  }
+}
+
