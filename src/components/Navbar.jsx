@@ -48,7 +48,7 @@ export default function Navbar() {
         </h1>
 
         <ul className="hidden md:flex space-x-10 text-sm tracking-widest text-[var(--color-muted)]">
-          {["ABOUT","PROJECTS","EXPERIENCE","CONTACT"].map((item,i)=>(
+          {["ABOUT","PROJECTS","CONTACT"].map((item,i)=>(
             <li key={i}
               className="hover:text-[var(--color-primary)] cursor-pointer hover:underline active:underline transition duration-300 hover:scale-110"
             >
@@ -78,9 +78,10 @@ export default function Navbar() {
           {["ABOUT","PROJECTS","EXPERIENCE","CONTACT"].map((item,i)=>(
             <button
               key={i}
+              
               className="hover:text-primary hover:translate-x-2 transition duration-300 text-left"
             >
-              {item}
+              <a href="">{item}</a>
             </button>
           ))}
         </div>

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,7 +9,10 @@ const Contact = () => {
   const linesRef = useRef([]);
   const emailRef = useRef(null);
   const socialRef = useRef([]);
-
+  const basic=[{
+    github: 'github.com/shivansh-mishra-12'
+  },
+{instagram: ''}]
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const lines = linesRef.current;
@@ -48,18 +51,18 @@ const Contact = () => {
       });
 
       // Socials
-      gsap.to(socials, {
-        opacity: 1,
-        y: 0,
-        stagger: 0.1,
-        duration: 0.8,
-        delay: 0.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      });
+      // gsap.to(socials, {
+      //   opacity: 1,
+      //   y: 0,
+      //   stagger: 0.1,
+      //   duration: 0.8,
+      //   delay: 0.5,
+      //   ease: "power3.out",
+      //   scrollTrigger: {
+      //     trigger: sectionRef.current,
+      //     start: "top 80%",
+      //   },
+      // });
 
       ScrollTrigger.refresh();
     }, sectionRef);
@@ -108,34 +111,18 @@ const Contact = () => {
         {/* Email */}
         <a
           ref={emailRef}
-          href="mailto:hello@shivansh.dev"
+          href="mailto:s70743553@gmail.com"
           className="group relative font-bold tracking-tight
           text-3xl sm:text-4xl md:text-5xl text-primary"
         >
-          hello@shivansh.dev
+          hello@shivansh.email
 
-          <span className="absolute left-0 -bottom-2 h-[2px] w-full bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+          <span className="absolute left-0 -bottom-2 h-0.5 w-full bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
 
           <span className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-30 transition duration-500 bg-primary" />
         </a>
 
-        {/* Socials */}
-        <div className="flex gap-4">
-          {["GH", "LI", "X", "CP"].map((item, i) => (
-            <a
-              key={i}
-              ref={(el) => (socialRef.current[i] = el)}
-              href="#"
-              className="w-12 h-12 flex items-center justify-center
-              rounded-md border border-white/30
-              text-white/80 bg-white/[0.03]
-              hover:bg-primary hover:text-black hover:border-primary
-              transition-all duration-300"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
+        
       </div>
     </section>
   );

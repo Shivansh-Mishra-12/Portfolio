@@ -1,18 +1,17 @@
-import React from "react";
-
 const techStack = [
   { name: "HTML5", level: "PRO", icon: "⚡" },
   { name: "CSS3", level: "PRO", icon: "🎨" },
   { name: "JavaScript", level: "MID", icon: "🟧" },
   { name: "React", level: "MID", icon: "⚛️" },
   { name: "Tailwind", level: "MID", icon: "💨" },
+  { name: "THREE JS", level: "MID", icon: "🌐" }, 
   { name: "Git/GitHub", level: "MID", icon: "🐙" },
-  { name: "Figma", level: "LEARN", icon: "🎭" },
+  { name: "Figma", level: "LEARN", icon: "🎭" }, 
 ];
 
 const About=()=>{
   return (
-    <section className="min-h-screen bg-[#0a0a0a] text-white px-6 md:px-16 py-16 relative overflow-hidden">
+    <section className="min-h-screen bg-bg text-white px-6 md:px-16 py-16 relative overflow-hidden">
 
       {/* subtle gradient background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.08),transparent_40%)]" />
@@ -44,7 +43,7 @@ const About=()=>{
           <p className="text-gray-500 max-w-xl mb-6 leading-relaxed">
             I'm comfortable with the fundamentals —{" "}
             <span className="text-white">HTML, CSS, JavaScript</span> — and I'm actively building projects with{" "}
-            <span className="text-white">React</span>.
+            <span className="text-white">React & React-Three-Fiber</span>.
           </p>
 
           <p className="text-gray-500 max-w-xl mb-10 leading-relaxed">
