@@ -4,3 +4,6 @@ body,html{
   box-sizing: border-box;
   overflow: auto;
 }
+*{
+  cursor: none !important;
+}
