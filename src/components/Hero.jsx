@@ -13,7 +13,6 @@ export default function Hero() {
       .from(".card", { x: 80, opacity: 0, duration: 0.6 }, "-=0.3")
       .from(".stats", { x: 40, opacity: 0, stagger: 0.1 }, "-=0.4");
   }, []);
-
   return (
     <section className="min-h-screen lg:-mt-12 bg-bg text-text flex items-center px-6 md:px-16">
       <div className="grid md:grid-cols-2 gap-10 w-full">
@@ -36,15 +35,15 @@ export default function Hero() {
           </h1>
 
           <p className="desc text-muted max-w-md mt-6">
-            I build fast, accessible, and beautiful web experiences. Currently levelling up my skills in 3D Websites, React-Three-Fiber, ThreeJS, modern CSS — one commit at a time.
+            Already have a designer? Great — I can work directly from your existing designs.
           </p>
 
           <div className="buttons flex gap-4 mt-8 flex-wrap">
-            <button className="bg-primary text-black px-6 py-3 text-xs tracking-widest cursor-pointer hover:-translate-y-1 transition">
-              VIEW PROJECTS →
+            <button className="bg-primary text-black text-xs tracking-widest cursor-pointer hover:-translate-y-1 transition">
+              <a href="#projects" className="w-full px-6 py-3 bg-primary">VIEW PROJECTS →</a>
             </button>
             <button className="border border-border px-6 py-3 text-xs tracking-widest cursor-pointer hover:border-primary hover:text-primary transition">
-              LET'S TALK
+              <a href="#contact" className="px-6 py-3 hover:border-primary" >LET'S TALK</a>
             </button>
           </div>
         </div>

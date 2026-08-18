@@ -39,6 +39,21 @@ export default function Navbar() {
     });
   };
 
+  const navs=[
+    {
+      title: "About",
+      href:"#about"
+    },
+    {
+      title: "Projects",
+      href:"#projects"
+    },
+    {
+      title: "Contact",
+      href:"#contact"
+    },
+  ]
+
   return (
     <nav className="bg-[var(--color-bg)] text-[var(--color-text)] px-6 py-4 border-b border-[var(--color-border)]">
       <div className="flex justify-between items-center">
@@ -48,11 +63,11 @@ export default function Navbar() {
         </h1>
 
         <ul className="hidden md:flex space-x-10 text-sm tracking-widest text-[var(--color-muted)]">
-          {["ABOUT","PROJECTS","CONTACT"].map((item,i)=>(
+          {navs.map((item,i)=>(
             <li key={i}
               className="hover:text-[var(--color-primary)] cursor-pointer hover:underline active:underline transition duration-300 hover:scale-110"
             >
-              {item}
+              <a href={item.href}>{item.title}</a>
             </li>
           ))}
         </ul>
@@ -75,13 +90,13 @@ export default function Navbar() {
           ref={menuRef}
           className="md:hidden flex flex-col mt-4 space-y-4 text-sm tracking-widest text-[var(--color-muted)]"
         >
-          {["ABOUT","PROJECTS","EXPERIENCE","CONTACT"].map((item,i)=>(
+          {navs.map((item,i)=>(
             <button
               key={i}
               
               className="hover:text-primary hover:translate-x-2 transition duration-300 text-left"
             >
-              <a href="">{item}</a>
+              <a href={item.href}>{item.title}</a>
             </button>
           ))}
         </div>

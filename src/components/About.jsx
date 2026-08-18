@@ -11,7 +11,7 @@ const techStack = [
 
 const About=()=>{
   return (
-    <section className="min-h-screen bg-bg text-white px-6 md:px-16 py-16 relative overflow-hidden">
+    <section id="about" className="min-h-screen bg-bg text-white px-6 md:px-16 py-16 relative overflow-hidden">
 
       {/* subtle gradient background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.08),transparent_40%)]" />
@@ -30,9 +30,9 @@ const About=()=>{
 
           {/* heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-8">
-            Turning ideas into <br />
-            pixel-perfect <br />
-            reality.
+            What 
+            I can <br />
+            Build ?
           </h1>
 
           {/* description */}
@@ -51,9 +51,7 @@ const About=()=>{
           </p>
 
           {/* button */}
-          <button className="bg-lime-400 text-black px-6 py-3 text-sm tracking-wide font-semibold hover:bg-lime-300 transition">
-            DOWNLOAD CV →
-          </button>
+          
         </div>
 
         {/* RIGHT SIDE */}

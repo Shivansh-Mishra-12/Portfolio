@@ -9,6 +9,7 @@ import gsap from "gsap";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Needs from "./components/Needs";
 
 const App = () => {
   const cursor = useRef(null);
@@ -71,6 +72,7 @@ const App = () => {
       <Marquee />
       <About />
       <Projects />
+      <Needs />
       <Contact />
       <Footer />
     </div>

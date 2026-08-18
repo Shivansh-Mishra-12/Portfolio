@@ -1,16 +1,49 @@
-# React + Vite
+# Shivansh Mishra — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal developer portfolio showcasing interactive websites,
+creative frontend experiences, and 3D web projects.
 
-Currently, two official plugins are available:
+## 🌐 Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[Visit Portfolio](https://personalportfolio-alpha-roan.vercel.app/)
 
-## React Compiler
+## About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I'm a frontend developer focused on building modern,
+responsive and interactive web experiences using React,
+GSAP and Three.js.
 
-## Expanding the ESLint configuration
+## Featured Projects
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+###  3D Car Configurator
+
+Interactive 3D product configuration experience.
+
+[Live Demo](https://3d-car-config.vercel.app/) · [Source Code](https://github.com/Shivansh-Mishra-12/Car_Configurator)
+
+###  Custom Rocket Builder
+
+Interactive 3D rocket exploration and selection experience.
+
+[Live Demo](https://custom-rocket-builder.vercel.app/) · [Source Code](https://github.com/Shivansh-Mishra-12/Custom-Rocket-Builder)
+
+###  DogStudio Recreation
+
+Creative frontend recreation focused on WebGL,
+animation and interaction.
+
+[Live Demo](https://dogstudioclone.netlify.app/) · [Source Code](https://github.com/Shivansh-Mishra-12/DogStudioClone)
+
+## Tech Stack
+
+- React
+- JavaScript
+- Three.js
+- React Three Fiber
+- GSAP
+- Tailwind CSS
+
+## Purpose
+
+This portfolio is designed to showcase my approach to
+interactive frontend development and 3D web experiences.

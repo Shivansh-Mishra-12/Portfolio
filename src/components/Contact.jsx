@@ -72,6 +72,7 @@ const Contact = () => {
 
   return (
     <section
+    id="contact"
       ref={sectionRef}
       className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center bg-bg text-text overflow-hidden"
     >
@@ -115,7 +116,7 @@ const Contact = () => {
           className="group relative font-bold tracking-tight
           text-3xl sm:text-4xl md:text-5xl text-primary"
         >
-          hello@shivansh.email
+          contact_now.mail
 
           <span className="absolute left-0 -bottom-2 h-0.5 w-full bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
 
