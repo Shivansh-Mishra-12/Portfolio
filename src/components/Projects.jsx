@@ -145,9 +145,10 @@
 
 // export default Projects;
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const ICON_HIDE_DELAY = 2500; // ms of inactivity before the PAUSE icon fades out
@@ -230,46 +231,52 @@ const Projects = () => {
   // }, []);
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
   const ctx = gsap.context(() => {
-    gsap.set(titleRef.current, { opacity: 0, y: 50 });
-    gsap.set(cardsRef.current, { opacity: 0, y: 100 });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 85%",
-        end: "top 35%",
-        scrub: 1,
-        markers: true
+    gsap.fromTo(
+      titleRef.current,
+      {
+        opacity: 0,
+        y: 50,
       },
-    });
-
-    tl.to(titleRef.current, {
-      opacity: 1,
-      y: 0,
-      ease: "power3.out",
-      duration: 1,
-    });
-
-    tl.to(
-      cardsRef.current,
       {
         opacity: 1,
         y: 0,
-        stagger: 0.2,
-        ease: "power3.out",
         duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+          markers: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      cardsRef.current,
+      {
+        opacity: 0,
+        y: 100,
       },
-      "-=0.5"
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: cardsRef.current[0],
+          start: "top 85%",
+          toggleActions: "play none none reverse",
+          markers: true,
+        },
+      }
     );
   }, sectionRef);
 
-  ScrollTrigger.refresh();
   return () => ctx.revert();
-
 }, []);
-
   const clearTimer = (timerMap, id) => {
     if (timerMap.current[id]) {
       clearTimeout(timerMap.current[id]);
