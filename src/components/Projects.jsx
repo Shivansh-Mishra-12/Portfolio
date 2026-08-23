@@ -145,10 +145,10 @@
 
 // export default Projects;
 
+
 import { useRef, useEffect, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const ICON_HIDE_DELAY = 2500; // ms of inactivity before the PAUSE icon fades out
@@ -163,7 +163,7 @@ const Projects = () => {
 
     { id: 2, title: "3D Car Configurator", desc: "An interactive product configurator allowing users to explore and customize a 3D vehicle directly in the browser.", mp4: "../car.mp4" },
 
-    { id: 3, title: "Dogstudio Clone", desc: "A frontend recreation exploring immersive WebGL visuals, scroll interactions, animation and creative UI..",  mp4: "../dog.mp4" },
+    { id: 3, title: "Dogstudio Clone", desc: "A frontend recreation exploring immersive WebGL visuals, scroll interactions, animation and creative UI..", mp4: "../dog.mp4" },
 
     { id: 4, title: "Custom Rocket Builder", desc: "An interactive 3D experience for exploring and selecting different rocket models in real time.", mp4: "../rocket.mp4" },
 
@@ -230,53 +230,52 @@ const Projects = () => {
   //   return () => ctx.revert();
   // }, []);
 
-
   useLayoutEffect(() => {
-  const ctx = gsap.context(() => {
-    gsap.fromTo(
-      titleRef.current,
-      {
+    const ctx = gsap.context(() => {
+      gsap.set(titleRef.current, {
         opacity: 0,
         y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-          markers: true,
-        },
-      }
-    );
+      });
 
-    gsap.fromTo(
-      cardsRef.current,
-      {
+      gsap.set(cardsRef.current, {
         opacity: 0,
         y: 100,
-      },
-      {
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+          end: "top 35%",
+          scrub: 1,
+          markers: true,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      tl.to(titleRef.current, {
         opacity: 1,
         y: 0,
-        duration: 1,
-        stagger: 0.15,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: cardsRef.current[0],
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-          markers: true,
-        },
-      }
-    );
-  }, sectionRef);
+        duration: 1,
+      });
 
-  return () => ctx.revert();
-}, []);
+      tl.to(
+        cardsRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.2,
+          ease: "power3.out",
+          duration: 1,
+        },
+        "-=0.5"
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   const clearTimer = (timerMap, id) => {
     if (timerMap.current[id]) {
       clearTimeout(timerMap.current[id]);
@@ -427,10 +426,9 @@ const Projects = () => {
       </div>
 
       {/* Cards */}
-      <div className="card-con w-screen -mx-6 pt-2">
-        <div className="w-full h-auto flex flex-col flex-wrap sm:flex-row gap-7 sm:gap-3 px-5 sm:mx-0">
+      <div className="card-con w-full pt-2">
+        <div className="w-full flex flex-col sm:flex-row flex-wrap gap-7 sm:gap-3 px-5">
           {data.map((item, i) => (
-
 
             <div
 
@@ -456,6 +454,8 @@ const Projects = () => {
                   muted
                   loop
                   playsInline
+                  preload="metadata"
+                  onLoadedMetadata={() => ScrollTrigger.refresh()}
                   className="w-full block rounded-lg border border-gray-600"
                 />
 
@@ -485,13 +485,11 @@ const Projects = () => {
                   </svg>
                 </div>
 
-
                 <div className="relative top-3 left-0">
 
                   <p className="desc mx-auto w-[95%] text-sm sm:text-base md:leading-loose lg:text-lg lg:leading-relaxed lg:tracking-tighter 2xl:text-xl text-center pt-2 tracking-wide text-gray-400">{item.desc}</p>
                 </div>
-                <div className="border sm:hidden border-gray-700 mt-11 w-screen absolute left-0 -ml-9 ">
-
+                <div className="border sm:hidden border-gray-700 mt-11 w-full">
                 </div>
               </div>
             </div>
