@@ -246,7 +246,7 @@ const Projects = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 85%",
-          end: "top 35%",
+          end: "bottom 85%",
           scrub: 1,
           markers: true,
           invalidateOnRefresh: true,
