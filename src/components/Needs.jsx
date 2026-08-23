@@ -17,35 +17,37 @@ import React from "react";
 
 const REQUIREMENTS = [
   {
-    icon: "📋",
-    iconBg: "rgba(251,146,60,0.12)",
-    title: "Project brief",
-    subtitle: "Goal, audience, and what \u201cdone\u201d looks like.",
-    tag: "Must have",
+    icon: "🎨",
+    iconBg: "rgba(190,242,100,0.12)",
+    title: "Brand assets",
+    subtitle: "Logos, colors, fonts, brand guidelines, or anything else that represents your brand.",
+    tag: "MUST HAVE",
     tagClass: "text-[#fb923c] bg-[rgba(251,146,60,0.1)]",
+    
   },
   {
     icon: "⏱️",
     iconBg: "rgba(251,146,60,0.12)",
     title: "Timeline",
-    subtitle: "A realistic deadline, plus any hard milestones.",
+    subtitle: "Your ideal launch date, important milestones, and any deadlines I should know about.",
     tag: "Must have",
     tagClass: "text-[#fb923c] bg-[rgba(251,146,60,0.1)]",
   },
   {
-    icon: "🎨",
-    iconBg: "rgba(190,242,100,0.12)",
-    title: "Brand assets",
-    subtitle: "Logo, colors, fonts — if you already have them.",
-    tag: "Helps a lot",
+    
+    icon: "📋",
+    iconBg: "rgba(251,146,60,0.12)",
+    title: "Project brief",
+    subtitle: "Your goals, target audience, key requirements, and what “done” looks like.",
+    tag: "HELPS A LOT",
     tagClass: "text-[#bef264] bg-[rgba(190,242,100,0.1)]",
   },
   {
     icon: "✍️",
     iconBg: "rgba(139,143,136,0.14)",
     title: "Content & copy",
-    subtitle: "Real text and images beat lorem ipsum every time.",
-    tag: "Nice bonus",
+    subtitle: "Logos, colors, fonts, brand guidelines, or anything else that represents your brand.",
+    tag: "MUST HAVE",
     tagClass: "text-[#8b8f88] bg-[rgba(139,143,136,0.12)]",
   },
 ];
@@ -62,7 +64,7 @@ const Needs=()=> {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-full grid-cols-1 items-start gap-12 font-mono md:grid-cols-2 md:gap-14 lg:gap-[70px]">
+      <div className="hidden md:grid relative mx-auto max-w-full grid-cols-1 items-start gap-12 font-mono md:grid-cols-2 md:gap-14 lg:gap-[70px]">
         {/* LEFT — illustrations / cards */}
         <div className="order-2 grid grid-cols-1 gap-4 sm:grid-cols-2 md:order-1">
           {REQUIREMENTS.map((item) => (
@@ -107,9 +109,9 @@ const Needs=()=> {
           </h2>
 
           <p className="mb-5 max-w-[520px] text-base leading-relaxed text-[#8a9188]">
-            Every good build starts with a clear picture. The more context
-            you hand me up front, the faster I can turn it into something
-            real — instead of guessing and reworking later.
+            Every good build starts with a clear picture. The more context you hand me up front, the faster I can turn your idea into something real — without unnecessary guessing or rework later.
+
+Here’s what makes the process smooth, and what I can happily help figure out if you don’t have it ready.
           </p>
 
           <p className="mb-9 max-w-[520px] text-base leading-relaxed text-[#8a9188]">
