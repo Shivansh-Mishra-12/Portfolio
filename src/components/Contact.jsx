@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
-  const sectionRef = useRef(null);
+  const contactRef = useRef(null);
   const linesRef = useRef([]);
   const emailRef = useRef(null);
   const socialRef = useRef([]);
@@ -32,8 +32,9 @@ const Contact = () => {
         duration: 1,
         ease: "power4.out",
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: contactRef.current,
           start: "top 75%",
+          end: "bottom 75%"
         },
       });
 
@@ -45,8 +46,9 @@ const Contact = () => {
         delay: 0.3,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: contactRef.current,
           start: "top 75%",
+          end: "bottom 75%"
         },
       });
 
@@ -59,13 +61,13 @@ const Contact = () => {
       //   delay: 0.5,
       //   ease: "power3.out",
       //   scrollTrigger: {
-      //     trigger: sectionRef.current,
+      //     trigger: contactRef.current,
       //     start: "top 80%",
       //   },
       // });
 
       ScrollTrigger.refresh();
-    }, sectionRef);
+    }, contactRef);
 
     return () => ctx.revert();
   }, []);
@@ -73,8 +75,8 @@ const Contact = () => {
   return (
     <section
     id="contact"
-      ref={sectionRef}
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center bg-bg text-text overflow-hidden"
+      ref={contactRef}
+      className="relative flex flex-col items-center justify-center px-6 text-center bg-bg text-text overflow-hidden"
     >
       {/* Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,241,53,0.08),transparent_65%)] pointer-events-none" />

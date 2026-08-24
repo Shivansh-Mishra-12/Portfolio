@@ -72,9 +72,9 @@ const App = () => {
       <Marquee />
       <About />
       <Projects />
-      <Needs />
+      {/* <Needs /> */}
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

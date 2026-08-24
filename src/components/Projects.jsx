@@ -156,7 +156,7 @@ const ICON_HIDE_DELAY = 2500; // ms of inactivity before the PAUSE icon fades ou
 const Projects = () => {
   const cardsRef = useRef([]);
   const titleRef = useRef(null);
-  const sectionRef = useRef(null);
+  const projectRef = useRef(null);
 
   const data = [
     { id: 1, title: "Solar 3D", desc: "A 3D Solar System simulation helping students understand things better.", mp4: "../solar3d.mp4", },
@@ -231,50 +231,50 @@ const Projects = () => {
   // }, []);
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.set(titleRef.current, {
-        opacity: 0,
-        y: 50,
-      });
+  const ctx = gsap.context(() => {
+    gsap.set(titleRef.current, {
+      opacity: 0,
+      y: 50,
+    });
 
-      gsap.set(cardsRef.current, {
-        opacity: 0,
-        y: 100,
-      });
+    gsap.set(cardsRef.current, {
+      opacity: 0,
+      y: 100,
+    });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-          end: "bottom 85%",
-          scrub: 1,
-          markers: true,
-          invalidateOnRefresh: true,
-        },
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 85%",
+        end: "top 35%",
+        scrub: 1,
+        markers: true,
+        invalidateOnRefresh: true,
+      },
+    });
 
-      tl.to(titleRef.current, {
+    tl.to(titleRef.current, {
+      opacity: 1,
+      y: 0,
+      ease: "power3.out",
+      duration: 1,
+    });
+
+    tl.to(
+      cardsRef.current,
+      {
         opacity: 1,
         y: 0,
+        stagger: 0.2,
         ease: "power3.out",
         duration: 1,
-      });
+      },
+      "-=0.5"
+    );
+  }, sectionRef);
 
-      tl.to(
-        cardsRef.current,
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.2,
-          ease: "power3.out",
-          duration: 1,
-        },
-        "-=0.5"
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  return () => ctx.revert();
+}, []);
 
   const clearTimer = (timerMap, id) => {
     if (timerMap.current[id]) {
@@ -408,9 +408,9 @@ const Projects = () => {
 
   return (
     <section
-      ref={sectionRef}
+      ref={projectRef}
       id="projects"
-      className="bg-bg text-text px-6 md:px-12 lg:px-20 py-24 min-h-screen "
+      className="bg-bg text-text px-6 md:px-12 lg:px-20 py-24"
     >
       {/* Header */}
       <div className="mb-20">
@@ -456,7 +456,7 @@ const Projects = () => {
                   playsInline
                   preload="metadata"
                   onLoadedMetadata={() => ScrollTrigger.refresh()}
-                  className="w-full block rounded-lg border border-gray-600"
+                  className="w-full block rounded-lg border border-gray-600"  
                 />
 
                 {/* Icon container: positioning only, always visible.
