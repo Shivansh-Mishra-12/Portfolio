@@ -244,7 +244,7 @@ const Projects = () => {
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: sectionRef.current,
+        trigger: projectRef.current,
         start: "top 85%",
         end: "top 35%",
         scrub: 1,
@@ -271,7 +271,7 @@ const Projects = () => {
       },
       "-=0.5"
     );
-  }, sectionRef);
+  }, projectRef);
 
   return () => ctx.revert();
 }, []);
