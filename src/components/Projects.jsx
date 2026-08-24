@@ -211,7 +211,6 @@ useLayoutEffect(() => {
         start: "top 75%",
         end: "bottom 55%",
         scrub: 1,
-        markers: true,
         invalidateOnRefresh: true,
       },
     });
