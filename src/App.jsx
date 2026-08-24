@@ -54,7 +54,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full min-h-screen">
       {/* Main Cursor */}
       <div
         ref={cursor}

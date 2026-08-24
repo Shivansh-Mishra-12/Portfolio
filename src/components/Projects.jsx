@@ -193,44 +193,7 @@ const Projects = () => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     gsap.set(titleRef.current, { opacity: 0, y: 50 });
-  //     gsap.set(cardsRef.current, { opacity: 0, y: 100 });
-
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: sectionRef.current,
-  //         start: "top 75%",
-  //         end: "top 30%",
-  //         scrub: 1.2,
-  //       },
-  //     });
-
-  //     tl.to(titleRef.current, {
-  //       opacity: 1,
-  //       y: 0,
-  //       ease: "power3.out",
-  //       duration: 1,
-  //     });
-
-  //     tl.to(
-  //       cardsRef.current,
-  //       {
-  //         opacity: 1,
-  //         y: 0,
-  //         stagger: 0.2,
-  //         ease: "power3.out",
-  //         duration: 1,
-  //       },
-  //       "-=0.5"
-  //     );
-  //   }, sectionRef);
-
-  //   return () => ctx.revert();
-  // }, []);
-
-  useLayoutEffect(() => {
+useLayoutEffect(() => {
   const ctx = gsap.context(() => {
     gsap.set(titleRef.current, {
       opacity: 0,
@@ -245,8 +208,8 @@ const Projects = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: projectRef.current,
-        start: "top 85%",
-        end: "top 35%",
+        start: "top 75%",
+        end: "bottom 55%",
         scrub: 1,
         markers: true,
         invalidateOnRefresh: true,
@@ -275,7 +238,6 @@ const Projects = () => {
 
   return () => ctx.revert();
 }, []);
-
   const clearTimer = (timerMap, id) => {
     if (timerMap.current[id]) {
       clearTimeout(timerMap.current[id]);

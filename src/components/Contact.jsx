@@ -51,21 +51,6 @@ const Contact = () => {
           end: "bottom 75%"
         },
       });
-
-      // Socials
-      // gsap.to(socials, {
-      //   opacity: 1,
-      //   y: 0,
-      //   stagger: 0.1,
-      //   duration: 0.8,
-      //   delay: 0.5,
-      //   ease: "power3.out",
-      //   scrollTrigger: {
-      //     trigger: contactRef.current,
-      //     start: "top 80%",
-      //   },
-      // });
-
       ScrollTrigger.refresh();
     }, contactRef);
 
@@ -76,7 +61,7 @@ const Contact = () => {
     <section
     id="contact"
       ref={contactRef}
-      className="relative flex flex-col items-center justify-center px-6 text-center bg-bg text-text overflow-hidden"
+      className="relative flex min-h-screen flex-col items-center justify-center px-6 text-center bg-bg text-text overflow-hidden"
     >
       {/* Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,241,53,0.08),transparent_65%)] pointer-events-none" />
