@@ -159,13 +159,13 @@ const Projects = () => {
   const projectRef = useRef(null);
 
   const data = [
-    { id: 1, title: "Solar 3D", desc: "A 3D Solar System simulation helping students understand things better.", mp4: "../solar3d.mp4", },
+    { id: 1, title: "Solar 3D", desc: "A 3D Solar System simulation helping students understand things better.", mp4: "../solar3d.mp4", url: "https://solar3d-five.vercel.app/" },
 
-    { id: 2, title: "3D Car Configurator", desc: "An interactive product configurator allowing users to explore and customize a 3D vehicle directly in the browser.", mp4: "../car.mp4" },
+    { id: 2, title: "3D Car Configurator", desc: "An interactive product configurator allowing users to explore and customize a 3D vehicle directly in the browser.", mp4: "../car.mp4", url : "https://3d-car-config.vercel.app/"},
 
-    { id: 3, title: "Dogstudio Clone", desc: "A frontend recreation exploring immersive WebGL visuals, scroll interactions, animation and creative UI..", mp4: "../dog.mp4" },
+    { id: 3, title: "Dogstudio Clone", desc: "A frontend recreation exploring immersive WebGL visuals, scroll interactions, animation and creative UI..", mp4: "../dog.mp4", url:"https://dogstudioclone.netlify.app/" },
 
-    { id: 4, title: "Custom Rocket Builder", desc: "An interactive 3D experience for exploring and selecting different rocket models in real time.", mp4: "../rocket.mp4" },
+    { id: 4, title: "Custom Rocket Builder", desc: "An interactive 3D experience for exploring and selecting different rocket models in real time.", mp4: "../rocket.mp4", url:"https://custom-rocket-builder.vercel.app/" },
 
   ];
 
@@ -451,6 +451,9 @@ useLayoutEffect(() => {
                   <p className="desc mx-auto w-[95%] text-sm sm:text-base md:leading-loose lg:text-lg lg:leading-relaxed lg:tracking-tighter 2xl:text-xl text-center pt-2 tracking-wide text-gray-400">{item.desc}</p>
                 </div>
                 <div className="border sm:hidden border-gray-700 mt-11 w-full">
+                </div>
+                <div className="block w-full mt-7 sm:mt-11 text-center">
+                  <button className="w-fit px-3 py-2 border-2 text-white cursor-pointer active:transition-all active:scale-[1.2] hover:scale-[1.1] bg-primary"> <a href={item.url} >VISIT NOW</a></button>
                 </div>
               </div>
             </div>

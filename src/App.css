@@ -35,7 +35,7 @@
 /* Optional global styles */
 @layer base {
   body {
-    /* @apply bg-[var(--color-bg)] text-[var(--color-text)] font-mono; */
+    @apply bg-[var(--color-bg)] text-[var(--color-text)] font-mono;
     @apply bg-bg text-text font-mono
   }
 }
